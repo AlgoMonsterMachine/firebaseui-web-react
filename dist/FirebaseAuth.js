@@ -26,6 +26,7 @@ var FirebaseAuth = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
+    _this.elementId = props.elementId ? props.elementId : ELEMENT_ID;
     _this.uiConfig = props.uiConfig;
     _this.firebaseAuth = props.firebaseAuth;
     _this.className = props.className;
@@ -59,7 +60,7 @@ var FirebaseAuth = function (_React$Component) {
         _this2.uiCallback(_this2.firebaseUiWidget);
       }
 
-      _this2.firebaseUiWidget.start('#' + ELEMENT_ID, _this2.uiConfig);
+      _this2.firebaseUiWidget.start('#' + _this2.elementId, _this2.uiConfig);
     });
   };
 
@@ -74,7 +75,7 @@ var FirebaseAuth = function (_React$Component) {
   };
 
   FirebaseAuth.prototype.render = function render() {
-    return _react2.default.createElement('div', { className: this.className, id: ELEMENT_ID });
+    return _react2.default.createElement('div', { className: this.className, id: this.elementId });
   };
 
   return FirebaseAuth;

@@ -2,6 +2,7 @@ import * as firebaseui from 'firebaseui';
 import * as React from 'react';
 
 export interface Props {
+  elementId?: string;
   uiConfig: firebaseui.auth.Config;
   uiCallback?(ui: firebaseui.auth.AuthUI): void;
   firebaseAuth: any; // As firebaseui-web

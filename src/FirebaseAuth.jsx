@@ -35,7 +35,7 @@ export default class FirebaseAuth extends React.Component {
    */
   constructor(props) {
     super(props);
-
+    this.elementId = props.elementId ? props.elementId : ELEMENT_ID;
     this.uiConfig = props.uiConfig;
     this.firebaseAuth = props.firebaseAuth;
     this.className = props.className;
@@ -79,7 +79,7 @@ export default class FirebaseAuth extends React.Component {
       }
 
       // Render the firebaseUi Widget.
-      this.firebaseUiWidget.start('#' + ELEMENT_ID, this.uiConfig);
+      this.firebaseUiWidget.start('#' + this.elementId, this.uiConfig);
     });
   }
 
@@ -98,6 +98,7 @@ export default class FirebaseAuth extends React.Component {
    * Properties types.
    */
   props: {
+    elementId?: String,
     // The Firebase UI Web UI Config object.
     // See: https://github.com/firebase/firebaseui-web#configuration
     uiConfig: Object,
@@ -115,7 +116,7 @@ export default class FirebaseAuth extends React.Component {
    */
   render() {
     return (
-      <div className={this.className} id={ELEMENT_ID}/>
+      <div className={this.className} id={this.elementId}/>
     );
   }
 }
